@@ -29,3 +29,8 @@ $ pip install -r Requirements.txt
 ```bash
 $ uvicorn main:app --reload --host 0.0.0.0 --port 5000
 ```
+
+## Run the the following Code To insatll LangChain Lib 
+ ```bash
+$ pip install -U langchain-community
+```
