@@ -16,6 +16,7 @@ async def startup_db_client():
 async def shutdown_db_client ():
     app.mongo_conn.close()
 
-    
+   
 app.include_router(base.base)
 app.include_router(data.data_router)
+ 
