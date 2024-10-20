@@ -1,25 +1,23 @@
 from enum import Enum
 
 class LLMEnums(Enum):
-    OPENAI="OPENAI"
-    COHERE ="COHERE"
-    OLAMA="OLAMA"
-class OpenAIEnums(Enum):
-    SYSTEM="system"
-    USER="user"
-    ASSISTANT="assistant"
-class CoHereEnums(Enum):
-    SYSTEM="SYSTEM"
-    USER="USER"
-    ASSISTANT="CHATBOT"
-    DOCUMENT="search_document"
-    QUERY="search_query"
-class DocumnetTypeEnum(Enum):
-    DOCUMENT="document"
-    QUERY="query"
+    OPENAI = "OPENAI"
+    COHERE = "COHERE"
 
-class LLaMAEnums(Enum):
-    USER = "user"
+class OpenAIEnums(Enum):
     SYSTEM = "system"
+    USER = "user"
     ASSISTANT = "assistant"
 
+class CoHereEnums(Enum):
+    SYSTEM = "SYSTEM"
+    USER = "USER"
+    ASSISTANT = "CHATBOT"
+
+    DOCUMENT = "search_document"
+    QUERY = "search_query"
+
+
+class DocumentTypeEnum(Enum):
+    DOCUMENT = "document"
+    QUERY = "query"

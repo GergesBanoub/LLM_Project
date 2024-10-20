@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-model_name = "/home/dm-desktop/OLama/Llama-3.1-8B"  # Specify your model name
+model_name = "/mnt/c/LLama/Llama-3.1-8B"  # Specify your model name
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
