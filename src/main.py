@@ -5,8 +5,19 @@ from helpers.config import get_settings
 from stores.llm.LLMProviderFactory import LLMProviderFactory
 from stores.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
 from stores.llm.templates.template_parser import TemplateParser
+from fastapi.middleware.cors import CORSMiddleware  # Import CORSMiddleware
 
 app = FastAPI()
+
+# Set up CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Frontend React URL
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers (Content-Type, Authorization, etc.)
+)
+
 
 @app.on_event("startup")
 async def startup_db_client():
@@ -39,7 +50,10 @@ async def startup_db_client():
         default_language=settings.DEFAULT_LANG,
     )
 
-
+    app.template_parser = TemplateParser(
+        language=settings.PRIMARY_LANG,
+        default_language=settings.DEFAULT_LANG,
+    )
 
 
 
