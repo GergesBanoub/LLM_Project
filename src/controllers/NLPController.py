@@ -129,8 +129,8 @@ class NLPController(BaseController):
 
         # step4: Retrieve the Answer
         answer = self.generation_client.generate_text(
-            prompt=full_prompt
-            
+            prompt=full_prompt,
+            chat_history=chat_history
         )
 
-        return answer, full_prompt, chat_history
+        return answer, full_prompt , chat_history
